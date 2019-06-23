@@ -1,12 +1,18 @@
 BasedOnStyle: Mozilla
 
-# Indent 4 spaces at a time.
-IndentWidth: 4
-
-# Use 4 space negative offset for access modifiers
 AccessModifierOffset: -4
-
+AlignEscapedNewlines: Left
+AllowShortLambdasOnASingleLine: All
+AlwaysBreakAfterReturnType: All
+AlwaysBreakTemplateDeclarations: true
+BreakBeforeBraces: Allman
+BreakConstructorInitializers: AfterColon
+BreakInheritanceList: AfterColon
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
 Cpp11BracedListStyle: true
-
-AlwaysBreakAfterDefinitionReturnType: None
-AlwaysBreakAfterReturnType: None
+FixNamespaceComments: true
+IncludeBlocks: Preserve
+IndentPPDirectives: AfterHash
+IndentWrappedFunctionNames: true
+Language: Cpp
+IndentWidth: 4
