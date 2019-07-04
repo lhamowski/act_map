@@ -25,6 +25,8 @@ public:
     using key_type = Key;
     using mapped_type = Mapped;
     using value_type = std::pair<key_type, mapped_type>;
+    using container_type = std::array<value_type, size>;
+    using size_type = typename container_type::size_type;
 
     template<typename... Args>
     constexpr map(Args&&... elements) :
@@ -32,8 +34,10 @@ public:
     {
     }
 
+    constexpr size_type size() const { return elements_.size(); }
+
 private:
-    std::array<value_type, size> elements_;
+    container_type elements_;
 };
 
 template<typename... Args>
