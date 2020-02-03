@@ -56,6 +56,11 @@ public:
         return std::nullopt;
     }
 
+    constexpr auto contains(const key_type& key) const
+    {
+        return find(key) != std::nullopt;
+    }
+
     constexpr std::optional<mapped_type> at(const key_type& key) const
     {
         auto result = find(key);
@@ -75,6 +80,8 @@ public:
     {
         return find(key) != std::nullopt ? 1 : 0;
     }
+
+    constexpr auto empty() const { return size() == 0; }
 
     constexpr size_type size() const { return elements_.size(); }
 

@@ -7,6 +7,5 @@ set_target_properties(act_map PROPERTIES
     INTERFACE_INCLUDE_DIRECTORIES "${include_directories}"
 )
 
-enable_testing()
 add_subdirectory(thirdparty)
 add_subdirectory(test)

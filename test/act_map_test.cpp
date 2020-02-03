@@ -6,7 +6,7 @@
 #include <cstdint>
 #include <utility>
 
-enum color { red, green, blue, black, white, yellow };
+enum class color { red, green, blue, black, white, yellow };
 
 TEST_CASE("Creat simple RGB colors map", "[map]")
 {
@@ -28,11 +28,15 @@ TEST_CASE("Creat simple RGB colors map", "[map]")
                                   std::pair{color::black, rgb{0,   0,   0  }},
                                   std::pair{color::white, rgb{255, 255, 255}}};
     REQUIRE(rgb_colors.size() == 5);
+    REQUIRE(!rgb_colors.empty());
 
     constexpr auto red_color_pair = rgb_colors.find(color::red);
     constexpr auto yellow_color_pair = rgb_colors.find(color::yellow);
     REQUIRE(*red_color_pair == std::pair{color::red, rgb{255, 0, 0}});
     REQUIRE(yellow_color_pair == std::nullopt);
+
+    REQUIRE(rgb_colors.contains(color::white));
+    REQUIRE(!rgb_colors.contains(color::yellow));
 
     constexpr auto green_color_rgb = rgb_colors.at(color::green);
     REQUIRE(*green_color_rgb == rgb{0, 255, 0});
@@ -45,4 +49,7 @@ TEST_CASE("Creat simple RGB colors map", "[map]")
     constexpr auto black_color_count = rgb_colors.count(color::black);
     REQUIRE(yellow_color_count == 0);
     REQUIRE(black_color_count == 1);
+
+    REQUIRE(rgb_colors.contains(color::red));
+    REQUIRE(!rgb_colors.contains(color::yellow));
 }
