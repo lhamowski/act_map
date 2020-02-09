@@ -5,7 +5,7 @@
 #include <utility>
 #include <optional>
 
-namespace act::details
+namespace act::detail
 {
 
 template<typename FirstType, typename... Ignore>
@@ -100,8 +100,8 @@ private:
 
 template<typename... Args>
 map(Args&&... elements)
-  ->map<typename details::first_element<Args...>::type::first_type,
-        typename details::first_element<Args...>::type::second_type,
+  ->map<typename detail::first_element<Args...>::type::first_type,
+        typename detail::first_element<Args...>::type::second_type,
         sizeof...(elements)>;
 
 } // namespace act
