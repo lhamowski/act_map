@@ -8,7 +8,7 @@
 
 enum class color { red, green, blue, black, white, yellow };
 
-TEST_CASE("Creat simple RGB colors map", "[map]")
+TEST_CASE("Creat simple RGB color map", "[map]")
 {
     struct rgb
     {
