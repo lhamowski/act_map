@@ -49,11 +49,11 @@ public:
         {
             if (actual->first == key)
             {
-                return {*actual};
+                return *actual;
             }
         }
         
-        return std::nullopt;
+        return {};
     }
 
     constexpr auto contains(const key_type& key) const
@@ -68,7 +68,7 @@ public:
         if (result != std::nullopt)
             return result->second;
 
-        return std::nullopt;
+        return {};
     }
 
     constexpr auto operator[](const key_type& key) const
