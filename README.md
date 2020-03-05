@@ -31,7 +31,7 @@ int main()
 
   constexpr auto blue = rgb_colors[color::blue]; // blue is a std::optional
   constexpr auto yellow = rgb_colors[color::yellow]; // rgb_colors doesn't contain yellow
-  static_assert(*blue == rgb{0,   0,   255});
+  static_assert(*blue == rgb{0, 0, 255});
   static_assert(yellow == std::nullopt);
 
   return 0;
