@@ -19,14 +19,14 @@ struct first_element
 namespace act
 {
 
-template<typename Key, typename Mapped, std::size_t size>
+template<typename Key, typename Mapped, std::size_t Size>
 class map
 {
 public:
     using key_type = Key;
     using mapped_type = Mapped;
     using value_type = std::pair<key_type, mapped_type>;
-    using container_type = std::array<value_type, size>;
+    using container_type = std::array<value_type, Size>;
     using size_type = typename container_type::size_type;
     using iterator = typename container_type::iterator;
     using const_iterator = typename container_type::const_iterator;
