@@ -14,7 +14,7 @@ struct first_element
     using type = FirstType;
 };
 
-} // namespace act::details
+} // namespace act::detail
 
 namespace act
 {
